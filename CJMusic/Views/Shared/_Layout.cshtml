@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+
+    <title>CJ MUSIC- DISQUERA</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kodchasan|Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kodchasan|Nanum+Gothic|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+
+
+    @Styles.Render("~/Content/CSS/swiper.min.css")
+    @Styles.Render("~/Content/css")
+
+    @Styles.Render("~/Content/CSS/Menu.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <!-- <li><a>@Html.Partial("_LoginPartial")</a></li>-->
+    <div class="wrapper">
+        <header>
+
+            <nav>
+
+                <div class="menu-icon">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+
+                <div class="logo">
+                    <a>
+                        <img src="~/Content/Img/logooficial.gif" style="height:50px; width:50px;" alt="Logo" />
+                        @Html.ActionLink("CJ Music", "Index", "Home", new { @class = "disquera" })
+                    </a>
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <li><a>@Html.ActionLink("Home", "Index", "Home", new { @class = "Link" })</a></li>
+                        <li><a>@Html.ActionLink("Servicios", "About", "Home", new { @class = "Link" })</a></li>
+                        <li><a>@Html.ActionLink("Nuestros Artistas", "Artistas", "Home", new { @class = "Link" })</a></li>
+                        <li><a>@Html.ActionLink("Noticias", "Noticias", "Home", new { @class = "Link" })</a></li>
+                        <li><a>@Html.ActionLink("Ubicación", "Ubicación", "Home", new { @class = "Link" })</a></li>
+                        <li><a>@Html.ActionLink("Nosotros", "Contact", "Home", new { @class = "Link" })</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+
+        </header>
+
+
+        @RenderBody()
+
+
+
+    </div>
+
+
+
+
+    @Scripts.Render("~/Scripts/js/swiper.min.js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/js/MenuNavbar.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "EliminarArtista";
+}
+
+<h2>EliminarArtista</h2>
+
+<hr />
+
+
+<form action="@Url.Action("EliminarArtista")" method="post">
+
+
+    <input type="text" name="Fecha" placeholder="Nombre del Artista" class="form-control" />
+    <br />
+    <input type="text" name="Artista" placeholder="Descripcion" class="form-control" />
+    <br />
+    <input type="text" name="Lugar" placeholder="URL imagen" class="form-control" />
+    <br />
+    <input type="text" name="Direccion" placeholder="Facebook" class="form-control" />
+    <br />
+    <input type="text" name="Direccion" placeholder="Twitter" class="form-control" />
+    <br />
+    <input type="text" name="Direccion" placeholder="Youtube" class="form-control" />
+    <br />
+
+    <input class="btn btn-success" type="submit" value="EliminarArtista" />
+
+</form>
+
+
+
+<a href="@Url.Action("Artistas")">Cancelar</a>

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+
+<hr />
+
+
+<form action="@Url.Action("Eliminar")" method="post">
+
+
+    <input type="text" name="Fecha" placeholder="Escribe la Fecha" class="form-control" />
+    <br />
+    <input type="text" name="Artista" placeholder="Escribe el Artista" class="form-control" />
+    <br />
+    <input type="text" name="Lugar" placeholder="Escribe el lugar" class="form-control" />
+    <br />
+    <input type="text" name="Direccion" placeholder="Escribe la direccion" class="form-control" />
+    <br />
+    
+    <input class="btn btn-success" type="submit" value="Eliminar" />
+
+</form>
+
+
+
+<a href="@Url.Action("Index")">Cancelar</a>
+
+
+

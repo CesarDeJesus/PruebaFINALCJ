@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "ActualizarArtista";
+}
+
+<h2>ActualizarArtista</h2>
+
+<hr />
+
+
+<form action="@Url.Action("ActualizarArtista")" method="post">
+
+
+    <input type="text" name="Nombre" placeholder="Nombre del Artista" class="form-control" />
+    <br />
+    <input type="text" name="Descripcion" placeholder="Descripcion" class="form-control" />
+    <br />
+    <input type="text" name="img" placeholder="URL imagen" class="form-control" />
+    <br />
+    <input type="text" name="facebook" placeholder="Facebook" class="form-control" />
+    <br />
+    <input type="text" name="twitter" placeholder="Twitter" class="form-control" />
+    <br />
+    <input type="text" name="youtube" placeholder="Youtube" class="form-control" />
+    <br />
+
+    <input class="btn btn-success" type="submit" value="ActualizarArtista" />
+
+</form>
+
+
+
+<a href="@Url.Action("Artistas")">Cancelar</a>

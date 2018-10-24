@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ListaArtistas = ViewBag.ListaArtistas;
+}
+@Styles.Render("~/Content/CSS/swiper.min.css")
+@Styles.Render("~/Content/CSS/Artista.css")
+
+
+
+
+
+<div class="swiper-container" style="padding-top:10%;">
+    <div class="swiper-wrapper">
+        @foreach (var a in ListaArtistas)
+        {
+            <div class="swiper-slide">
+                <div class="img-box">
+                    <img src="@a.img" style="height:380px; width:300px; border-radius:10px;" />
+                </div>
+                <div class="content">
+                    <h5>@a.Nombre</h5>
+                    <p>@a.Descripcion</p>
+
+                    <ul>
+                        <li><a href="@a.facebook"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href="@a.twitter"><i class="fab fa-twitter-square"></i></a></li>
+                        <li><a href="@a.youtube"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                    <p>
+                        <a style="margin-left:100px; width:100px; color:white;">@Html.ActionLink("Actualizar", "ActualizarArtista", new { Id = a.Id })</a>
+
+                        <a>@Html.ActionLink("Eliminar", "EliminarArtista", new { Id = a.Id })</a>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<a href="@Url.Action("AgregarArtista")" style="font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: white; margin-left:15%;"><i class="fas fa-calendar" style="font-size:25px; color: white; margin-right:5px;"></i>Agregar Nuevo Artista</a>
+
+
+<footer class="footer-distributed">
+    <div class="footer-right">
+        <a href="#" style="border-radius:35%;"><i class="fab fa-facebook-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-twitter-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+    </div>
+    <div class="footer-left">
+        <img src="~/Content/Img/logooficial.gif" style="height:55px; width:55px;" />
+        <p>
+            © Copyright 2018 CJ Music Group. All rights reserved.
+        </p>
+    </div>
+</footer>
+@Scripts.Render("~/Scripts/js/swiper.min.js")
+@Scripts.Render("~/Scripts/js/Artista.js")
