@@ -230,8 +230,15 @@
     <Compile Include="Models\EventosBL.cs" />
     <Compile Include="Models\EventosDAL.cs" />
     <Compile Include="Models\EventosEN.cs" />
+    <Compile Include="Models\FotosBL.cs" />
+    <Compile Include="Models\FotosDAL.cs" />
+    <Compile Include="Models\FotosEN.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NewsBL.cs" />
+    <Compile Include="Models\NewsDAL.cs" />
+    <Compile Include="Models\NewsEN.cs" />
+    <Compile Include="Models\SMTPemail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -245,6 +252,7 @@
     <Content Include="Content\CSS\Artista.css" />
     <Content Include="Content\CSS\home.css" />
     <Content Include="Content\CSS\Menu.css" />
+    <Content Include="Content\CSS\Noticias.css" />
     <Content Include="Content\CSS\swiper.min.css" />
     <Content Include="Content\Img\ArtistasCarrusel\ba.jpg" />
     <Content Include="Content\Img\ArtistasCarrusel\eventos.gif" />
@@ -254,6 +262,7 @@
     <Content Include="Content\Img\ArtistasCarrusel\paty.jpg" />
     <Content Include="Content\Img\ArtistasCarrusel\patycantu.gif" />
     <Content Include="Content\Img\ArtistasCarrusel\trenza.jpg" />
+    <Content Include="Content\Img\blur-classic-close-up-371836.jpg" />
     <Content Include="Content\Img\fondoImagen.jpg" />
     <Content Include="Content\Img\footer.png" />
     <Content Include="Content\Img\jd.mp3" />
@@ -298,6 +307,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\js\Artista.js" />
+    <Content Include="Scripts\js\galeria.js" />
     <Content Include="Scripts\js\MenuNavbar.js" />
     <Content Include="Scripts\js\swiper.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />

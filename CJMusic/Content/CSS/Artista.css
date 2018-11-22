@@ -8,7 +8,7 @@
 .swiper-container {
     width: 100%;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 50px;   
 }
 
 .swiper-slide {
@@ -72,6 +72,9 @@ content ul li{
     font-size: 18px;
 }
 
+
+
+
 .footer-distributed {
     background: url(../Img/footer.png);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -80,7 +83,7 @@ content ul li{
     text-align: left;
     font: normal 16px sans-serif;
     padding: 45px 50px;
-    margin-top: 80px;
+    margin-top: -30px;
 }
 
     .footer-distributed .footer-left p {

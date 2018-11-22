@@ -1,4 +1,4 @@
-﻿
+﻿@model CJMusic.Models.ArtistasEn
 @{
     ViewBag.Title = "ActualizarArtista";
 }
@@ -10,18 +10,17 @@
 
 <form action="@Url.Action("ActualizarArtista")" method="post">
 
-
-    <input type="text" name="Nombre" placeholder="Nombre del Artista" class="form-control" />
+    <input type="text" name="Nombre" value="@ViewBag.Nombre" class="form-control" />
     <br />
-    <input type="text" name="Descripcion" placeholder="Descripcion" class="form-control" />
+    <input type="text" name="Descripcion" value="@ViewBag.Descripcion" class="form-control" />
     <br />
-    <input type="text" name="img" placeholder="URL imagen" class="form-control" />
+    <input type="text" name="img" value="@ViewBag.img" class="form-control" />
     <br />
-    <input type="text" name="facebook" placeholder="Facebook" class="form-control" />
+    <input type="text" name="facebook" value="@ViewBag.facebook" class="form-control" />
     <br />
-    <input type="text" name="twitter" placeholder="Twitter" class="form-control" />
+    <input type="text" name="twitter" value="@ViewBag.twitter" class="form-control" />
     <br />
-    <input type="text" name="youtube" placeholder="Youtube" class="form-control" />
+    <input type="text" name="youtube" value="@ViewBag.youtube" class="form-control" />
     <br />
 
     <input class="btn btn-success" type="submit" value="ActualizarArtista" />

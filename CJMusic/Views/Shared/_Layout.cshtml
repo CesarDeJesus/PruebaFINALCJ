@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kodchasan|Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kodchasan|Nanum+Gothic|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
 
@@ -27,44 +27,44 @@
 </head>
 <body>
     <!-- <li><a>@Html.Partial("_LoginPartial")</a></li>-->
+
+    <header>
+
+        <nav>
+
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+
+            <div class="logo">
+                <a>
+                    <img src="~/Content/Img/logooficial.gif" style="height:50px; width:50px;" alt="Logo" />
+                    @Html.ActionLink("CJ Music", "Index", "Home", new { @class = "disquera" })
+                </a>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a>@Html.ActionLink("Home", "Index", "Home", new { @class = "Link" })</a></li>
+                    <li><a>@Html.ActionLink("Servicios", "About", "Home", new { @class = "Link" })</a></li>
+                    <li><a>@Html.ActionLink("Nuestros Artistas", "Artistas", "Home", new { @class = "Link" })</a></li>
+                    <li><a>@Html.ActionLink("Noticias", "Noticias", "Home", new { @class = "Link" })</a></li>
+                    <li><a>@Html.ActionLink("Ubicación", "Ubicación", "Home", new { @class = "Link" })</a></li>
+                    <li><a>@Html.ActionLink("Nosotros", "Contact", "Home", new { @class = "Link" })</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
     <div class="wrapper">
-        <header>
-
-            <nav>
-
-                <div class="menu-icon">
-                    <i class="fa fa-bars fa-2x"></i>
-                </div>
-
-                <div class="logo">
-                    <a>
-                        <img src="~/Content/Img/logooficial.gif" style="height:50px; width:50px;" alt="Logo" />
-                        @Html.ActionLink("CJ Music", "Index", "Home", new { @class = "disquera" })
-                    </a>
-                </div>
-
-                <div class="menu">
-                    <ul>
-                        <li><a>@Html.ActionLink("Home", "Index", "Home", new { @class = "Link" })</a></li>
-                        <li><a>@Html.ActionLink("Servicios", "About", "Home", new { @class = "Link" })</a></li>
-                        <li><a>@Html.ActionLink("Nuestros Artistas", "Artistas", "Home", new { @class = "Link" })</a></li>
-                        <li><a>@Html.ActionLink("Noticias", "Noticias", "Home", new { @class = "Link" })</a></li>
-                        <li><a>@Html.ActionLink("Ubicación", "Ubicación", "Home", new { @class = "Link" })</a></li>
-                        <li><a>@Html.ActionLink("Nosotros", "Contact", "Home", new { @class = "Link" })</a></li>
-                    </ul>
-                </div>
-
-            </nav>
-
-        </header>
-
 
         @RenderBody()
-
-
-
     </div>
-
+    
 
 
 

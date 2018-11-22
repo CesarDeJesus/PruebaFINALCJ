@@ -1,17 +1,27 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<p style="padding-top:27px; height:62px;  width:100%;"></p>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<h2>Submit Email Request for Assistance</h2>
+<form method="post" action="ProcessRequest.cshtml">
+    <div>
+        Your name:
+        <input type="text" name="customerName" />
+    </div>
+
+    <div>
+        Your email address:
+        <input type="text" name="customerEmail" />
+    </div>
+
+    <div>
+        Details about your problem: <br />
+        <textarea name="customerRequest" cols="45" rows="4"></textarea>
+    </div>
+
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>

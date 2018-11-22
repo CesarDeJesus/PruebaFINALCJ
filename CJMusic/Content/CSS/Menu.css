@@ -36,12 +36,14 @@ header {
         color: aquamarine;
     }
 
+
+
 nav {
     position: fixed;
     width: 100%;
     line-height: 20px;
     z-index: 1000;
-    background: black;
+    background: linear-gradient(0deg, #3a414c, transparent);
 }
 
     nav ul {
@@ -58,15 +60,25 @@ nav {
     }
 
     nav.black ul {
-        background: #5F698D;
+        background: #5F698D ;
+
     }
 
     nav ul li {
         display: inline-block;
-        padding: 16px 40px;
-    
+        padding: 16px 30px;
+        
     }
 
+        nav ul li a {
+            transition: 0.5s;
+            transform-origin: 0% 50%;
+        }
+
+nav ul li a:hover {
+        border-bottom: 1px solid white;
+       
+}
        
 
 .menu-icon {
@@ -152,7 +164,7 @@ nav {
         line-height: 1.8;
     }
 }
-@media(max-width: 1250px) {
+@media(max-width: 1150px) {
 
     .logo {
         position: fixed;

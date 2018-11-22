@@ -13,4 +13,5 @@
       pagination: {
         el: '.swiper-pagination',
       },
-    });
+});
+

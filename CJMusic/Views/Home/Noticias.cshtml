@@ -1,6 +1,147 @@
-﻿@{
+﻿@model CJMusic.Models.NewsEN
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var News = ViewBag.News;
 }
+@Styles.Render("~/Content/CSS/Noticias.css")
+<p style="padding-top:27px; height:62px;  width:100%;"></p>
+
+
+<div class="contenedor">
+    @foreach (var a in News)
+    {
+    <div class="contenedor_tarjeta">
+
+
+        <figure>
+
+            <img class="frontal" src="@a.foto" alt="artista" />
+            <h2 style="margin-top:-350px; font-size:24px; margin-left:5px; font-family: 'Pacifico', cursive; color:white;" class="artista">@a.Artista</h2>
+            <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>
+            <figcaption class="trasera">
+                <h2 class="titulo">@a.TNoticia</h2>
+                <hr />
+                <p style="font-family: 'Open Sans', sans-serif;">
+                    @a.DNoticia
+                </p>
+              
+             <!--   <a asp-action="@Url.Action("ActualizaNews")" style="margin-left:100px; width:100px; color:white;" data-toggle="modal" data-target="#exampleModalCenter1">Ac</a>-->
+            </figcaption>
+
+        </figure>
+
+      
+    </div>
+    }
+
+
+</div>
+
+<a asp-action="AgregarNews" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary" style="color:white; margin-left:15px; margin-top:-25px;">Agregar Nueva Noticia</a>
+
+
+<!-- Modal AGREGAR -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Agrega una Nueva Noticia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+
+                    <form action="@Url.Action("AgregarNews")" method="post">
+
+
+                        <input type="text" name="Artista" placeholder="Nombre del Artista" class="form-control" />
+                        <br />
+                        <input type="text" name="TNoticia" placeholder="Titulo de la Noticia" class="form-control" />
+                        <br />
+                        <input type="text" name="foto" placeholder="URL imagen" class="form-control" />
+                        <br />
+                        <textarea type="text" name="DNoticia" placeholder="Descripcion de la noticia" class="form-control"></textarea>
+                        <br />
+
+                        <input class="btn btn-success" type="submit" value="AgregarNews" />
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Actualizar -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Agrega una Nueva Noticia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+
+                    <form action="@Url.Action("ActualizaNews")" method="post">
+
+
+                        <input type="text" name="Artista" value="@ViewBag.Artista" class="form-control" />
+                        <br />
+                        <input type="text" name="TNoticia" value="@ViewBag.TNoticia" class="form-control" />
+                        <br />
+                        <input type="text" name="foto" value="@ViewBag.foto" class="form-control" />
+                        <br />
+                        <textarea type="text" name="DNoticia" value="@ViewBag.DNoticia" class="form-control"></textarea>
+                        <br />
+
+                        <input class="btn btn-success" type="submit" value="ActualizaNews" />
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<footer class="footer-distributed">
+    <div class="footer-right">
+        <a href="#" style="border-radius:35%;"><i class="fab fa-facebook-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-twitter-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+    </div>
+    <div class="footer-left">
+        <img src="~/Content/Img/logooficial.gif" style="height:55px; width:55px;" />
+        <p style="color:white;">
+            © Copyright 2018 CJ Music Group. All rights reserved.
+        </p>
+    </div>
+</footer>
+
 
 
 
