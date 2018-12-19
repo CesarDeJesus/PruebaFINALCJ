@@ -33,11 +33,17 @@
 
                     </ul>
 
-                    <p>
-                        <a style="margin-left:100px; width:100px; color:white;">@Html.ActionLink("Actualizar", "ActualizarArtista", new { Id = a.Id })</a>
+                    @{
+                        if (User.IsInRole("Administrador"))
+                        {
+                            <p>
+                                <a style="margin-left:100px; width:100px; color:white;">@Html.ActionLink("Actualizar", "ActualizarArtista", new { Id = a.Id })</a>
 
-                        <a>@Html.ActionLink("Eliminar", "EliminarArtista", new { Id = a.Id })</a>
-                    </p>
+                                <a>@Html.ActionLink("Eliminar", "EliminarArtista", new { Id = a.Id })</a>
+                            </p>
+                        }
+                    }
+
 
 
                 </div>
@@ -51,11 +57,20 @@
     <div class="swiper-pagination"></div>
 </div>
 
-
-<a href="@Url.Action("AgregarArtista")" style="font-family: 'Nanum Gothic', sans-serif;
+@{
+    if (User.IsInRole("Administrador"))
+    {
+        <a href="@Url.Action("AgregarArtista")" style="font-family: 'Nanum Gothic', sans-serif;
 font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: white; margin-left:15%;"><i class="fas fa-calendar" style="font-size:25px; color: white; margin-right:5px;"></i>Agregar Nuevo Artista</a>
-<br />
-<br />
+        <br />
+        <br />
+    }
+    else
+    {
+
+    }
+}
+
 
 <a href="" style="font-family: 'Nanum Gothic', sans-serif;
 font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: white; font-size:17px; margin-left:15%;" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-camera-retro" style="font-size:25px; color: white; margin-right:5px;"></i>Galeria de Fotos</a>
@@ -72,7 +87,7 @@ font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: 
                 </button>
             </div>
             <div class="modal-body">
-             
+
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -80,11 +95,11 @@ font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: 
                         </div>
                         @foreach (var a in Fotos)
                         {
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="@a.Imagen" alt="First slide">
-                        </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="@a.Imagen" alt="First slide">
+                            </div>
                         }
-                            
+
 
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -100,22 +115,28 @@ font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a asp-action="AgregarGaleria" data-toggle="modal" data-target=".bd-example-modal-sm" class="btn btn-primary" style="color:white;">Agregar Nueva Imagen</a>
+                @{
+                    if (User.IsInRole("Administrador"))
+                    {
+                        <a asp-action="AgregarGaleria" data-toggle="modal" data-target=".bd-example-modal-sm" class="btn btn-primary" style="color:white;">Agregar Nueva Imagen</a>
 
+                    }
+
+                }
                 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h4>AGREGAR IMAGEN</h4>
+                                <h4>AGREGAR IMAGEN</h4>
                             </div>
                             <div class="modal-body">
 
                                 <form action="@Url.Action("AgregarGaleria")" method="post">
 
-                                 
+
                                     <input type="text" name="imagen" placeholder="URL imagen" class="form-control" />
                                     <br />
-                                  
+
                                     <input class="btn btn-success" type="submit" value="AgregarGaleria" />
 
                                 </form>
@@ -126,15 +147,18 @@ font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: 
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
+                    </div>
+
+
                 </div>
-
-
             </div>
         </div>
     </div>
 </div>
-    </div>
 <!-- Modal -->
+
+<button onclick="myFunctions()">Click me</button>
+<div id="myfirstchart" style="height: 250px;"></div>
 
 <footer class="footer-distributed">
     <div class="footer-right">
@@ -145,7 +169,7 @@ font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: 
     </div>
     <div class="footer-left">
         <img src="~/Content/Img/logooficial.gif" style="height:55px; width:55px;" />
-        <p >
+        <p>
             © Copyright 2018 CJ Music Group. All rights reserved.
         </p>
     </div>
@@ -154,4 +178,4 @@ font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: 
 
 @Scripts.Render("~/Scripts/js/swiper.min.js")
 @Scripts.Render("~/Scripts/js/Artista.js")
-
+@Scripts.Render("~/Scripts/js/pruebaagrega.js")

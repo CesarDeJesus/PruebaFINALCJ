@@ -10,34 +10,44 @@
 <div class="contenedor">
     @foreach (var a in News)
     {
-    <div class="contenedor_tarjeta">
+        <div class="contenedor_tarjeta">
 
 
-        <figure>
+            <figure>
 
-            <img class="frontal" src="@a.foto" alt="artista" />
-            <h2 style="margin-top:-350px; font-size:24px; margin-left:5px; font-family: 'Pacifico', cursive; color:white;" class="artista">@a.Artista</h2>
-            <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>
-            <figcaption class="trasera">
-                <h2 class="titulo">@a.TNoticia</h2>
-                <hr />
-                <p style="font-family: 'Open Sans', sans-serif;">
-                    @a.DNoticia
-                </p>
-              
-             <!--   <a asp-action="@Url.Action("ActualizaNews")" style="margin-left:100px; width:100px; color:white;" data-toggle="modal" data-target="#exampleModalCenter1">Ac</a>-->
-            </figcaption>
+                <img class="frontal" src="@a.foto" alt="artista" />
+                <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>
+                <figcaption class="trasera">
+                    <h2 class="titulo">@a.TNoticia</h2>
+                    <hr />
+                    <p style="font-family: 'Open Sans', sans-serif;">
+                        @a.DNoticia
+                    </p>
+                    @{ 
+                        if (User.IsInRole("Administrador"))
+                        {
+                             <a>@Html.ActionLink("Modal", "EliminarNews", new { id = a.Id })</a>
+                        }
+                    }
+                   
 
-        </figure>
+                </figcaption>
 
-      
-    </div>
+            </figure>
+
+
+        </div>
     }
 
 
 </div>
+@{
+    if (User.IsInRole("Administrador"))
+    {
+        <a asp-action="AgregarNews" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary" style="color:white; margin-left:35px; margin-top:10px;">Agregar Nueva Noticia</a>
 
-<a asp-action="AgregarNews" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary" style="color:white; margin-left:15px; margin-top:-25px;">Agregar Nueva Noticia</a>
+    }
+}
 
 
 <!-- Modal AGREGAR -->
@@ -119,6 +129,28 @@
     </div>
 </div>
 
+<!-- Small modal -->
+
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <form action="@Url.Action("EliminarNews")" method="post">
+
+
+
+
+                <input class="btn btn-success" type="submit" value="EliminarNews" />
+
+
+            </form>
+
+
+
+            <a href="@Url.Action("Noticias")">Cancelar</a>
+        </div>
+    </div>
+</div>
 
 
 

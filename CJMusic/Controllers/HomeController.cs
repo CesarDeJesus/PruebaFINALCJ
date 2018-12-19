@@ -1,12 +1,10 @@
-﻿using System;
+﻿using CJMusic.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
-using System.Net;
-using System.Net.Mail;
-using CJMusic.Models;
 
 namespace CJMusic.Controllers
 {
@@ -17,14 +15,14 @@ namespace CJMusic.Controllers
         ArtistasBL _bl1 = new ArtistasBL();
         FotosBL _bl2 = new FotosBL();
         NewsBL _bl3 = new NewsBL();
-
+        
         public ActionResult Index()
         {
-            ViewBag.ListaEventos = _bl.ConsultarEventos().ToList();
+            ViewBag.ListaEventos = _bl.ConsultarEventos().ToList(); 
             return View();
         }
 
-        public ActionResult Agregar()
+            public ActionResult Agregar()
         {
             return View();
         }
@@ -64,8 +62,8 @@ namespace CJMusic.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.ListaArtistas = _bl1.ConsultarArtistas().ToList();
+            
             return View();
         }
 
@@ -75,11 +73,7 @@ namespace CJMusic.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Contact(String para, String asunto, String mensaje, HttpPostedFileBase fichero)
-        {
-           
-        }
+       
         public ActionResult Artistas()
         {
             ViewBag.ListaArtistas = _bl1.ConsultarArtistas().ToList();
@@ -151,6 +145,9 @@ namespace CJMusic.Controllers
 
         }
 
+      
+       
+
         public ActionResult AgregarNews()
         {
             return RedirectToAction("Noticias");
@@ -192,9 +189,82 @@ namespace CJMusic.Controllers
             ViewBag.News = _bl3.ConsultarNews().ToList();
             return View();
         }
+
+        public ActionResult EliminarNews()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EliminarNews(NewsEN pEN)
+        {
+            _bl3.EliminarNews(pEN);
+            return RedirectToAction("Noticias");
+        }
+
         public ActionResult Ubicación()
         {
             return View();
         }
+
+        public ActionResult PatyCanciones()
+        {
+            ViewBag.ListaArtista = GetFiless().ToList();
+            return View();
+        }
+
+        //CANCIONES SERVICE
+
+        [HttpPost]
+        public ActionResult Envia(HttpPostedFileBase file)
+        {
+            if (file != null && file.ContentLength > 0)
+                try
+                {
+                    string path = Path.Combine(Server.MapPath("~/Content/Canciones/PatyCantu"),
+                                               Path.GetFileName(file.FileName));
+                    file.SaveAs(path);
+                    ViewBag.Message = "File uploaded successfully";
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                }
+            else
+            {
+                ViewBag.Message = "You have not specified a file.";
+            }
+
+            var itemss = GetFiless();
+            return RedirectToAction("PatyCanciones");
+
+        }
+
+
+        public FileResult Download(string ImageName)
+        {
+            var FileVirtualPath = "~/Content/Canciones/PatyCantu/" + ImageName;
+            return File(FileVirtualPath, "application/force- download", Path.GetFileName(FileVirtualPath));
+        }
+
+        private List<string> GetFiless()
+        {
+            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/Content/Canciones/PatyCantu/"));
+            System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
+
+            List<string> itemss = new List<string>();
+            foreach (var file in fileNames)
+            {
+                itemss.Add(file.Name);
+            }
+
+            return itemss;
+        }
+
+        public ActionResult Canciones()
+        {
+            return View();
+        }
+
     }
 }

@@ -1,27 +1,26 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
+@Styles.Render("~/Content/CSS/contacto.css")
 
-<p style="padding-top:27px; height:62px;  width:100%;"></p>
+<link href="https://es.snatchbot.me/sdk/webchat.css" rel="stylesheet" type="text/css">
+<script src="https://es.snatchbot.me/sdk/webchat.min.js"></script>
+<script>Init('?botID=39012&appID=webchat', 600, 600, 'https://dvgpba5hywmpo.cloudfront.net/media/image/OvrMkOxDcNG9AMIKHKhBFGcmU', 'bubble', '#00AFF0', 90, 90, 62.99999999999999, '', '1', '#FFFFFF', '#FFFFFF', 1); /* for authentication of its users, you can define your userID (add &userID={login}) */</script>
 
-<h2>Submit Email Request for Assistance</h2>
-<form method="post" action="ProcessRequest.cshtml">
-    <div>
-        Your name:
-        <input type="text" name="customerName" />
+
+
+
+<footer class="footer-distributed">
+    <div class="footer-right">
+        <a href="#" style="border-radius:35%;"><i class="fab fa-facebook-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-twitter-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
     </div>
-
-    <div>
-        Your email address:
-        <input type="text" name="customerEmail" />
+    <div class="footer-left">
+        <img src="~/Content/Img/logooficial.gif" style="height:55px; width:55px;" />
+        <p style="color:white;">
+            © Copyright 2018 CJ Music Group. All rights reserved.
+        </p>
     </div>
-
-    <div>
-        Details about your problem: <br />
-        <textarea name="customerRequest" cols="45" rows="4"></textarea>
-    </div>
-
-    <div>
-        <input type="submit" value="Submit" />
-    </div>
-</form>
+</footer>

@@ -1,0 +1,235 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: #1D1D1D;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 10px 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contenedor_tarjeta {
+    margin: 5px;
+}
+
+    .contenedor_tarjeta a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+
+    .contenedor_tarjeta:hover figure {
+        -webkit-transform: perspective(600px) rotateY(180deg);
+        -ms-transform: perspective(600px) rotateY(180deg);
+        -o-transform: perspective(600px) rotateY(180deg);
+        transform: perspective(600px) rotateY(180deg);
+    }
+
+        .contenedor_tarjeta:hover figure img {
+            -webkit-box-shadow: 1px 6px 9px 1px rgba(0,0,0,0.61);
+            -moz-box-shadow: 1px 6px 9px 1px rgba(0,0,0,0.61);
+            box-shadow: 1px 6px 9px 1px rgba(0,0,0,0.61);
+            opacity: .5;
+        }
+
+    .contenedor_tarjeta:hover .artista {
+        display: none;
+    }
+
+
+
+figure {
+    width: 250px;
+    height: 300px;
+    margin: 0;
+    position: relative;
+    transition: all ease .5s;
+    transform-style: preserve-3d;
+    transform: perspective(600px) rotateY(0deg);
+}
+
+    figure .frontal,
+    figure .trasera {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: 1px solid #ada996;
+        background: linear-gradient(0deg, #c21833, transparent);
+        transition: all ease .5s;
+    }
+
+    figure .frontal {
+        display: block;
+    }
+
+.noticia {
+    display: none;
+}
+
+figure .trasera {
+    position: absolute;
+    top: 0;
+    padding: 20px;
+    color: white;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    overflow: auto;
+    background: #0F2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.letra {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Pacifico', cursive;
+}
+.bComprar {
+    background: #667db6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 3px;
+    border: 2px solid #12c2e9;
+    height: 40px;
+    width:190px;
+    color: white;
+}
+    .bComprar:hover {
+        cursor: pointer;
+        border: 4px solid white;
+    }
+
+.LetrasSuperiores {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 55px;
+    color: papayawhip;
+    margin-left: 15%;
+   
+}
+
+
+figure .trasera .titulo {
+    color: white;
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+    figure .trasera hr {
+        height: 2px;
+        background: #fff;
+        border: none;
+        margin-bottom: 15px;
+        opacity: .5;
+    }
+
+    figure .trasera p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+
+.footer-distributed {
+    background: url(../Img/footer.png);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 45px 50px;
+    margin-top: -30px;
+}
+
+    .footer-distributed .footer-left p {
+        color: #8f9296;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    /* Footer links */
+
+    .footer-distributed p.footer-links {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 0 0 10px;
+        padding: 0;
+    }
+
+        .footer-distributed p.footer-links a {
+            display: inline-block;
+            line-height: 1.8;
+            text-decoration: none;
+            color: inherit;
+        }
+
+    .footer-distributed .footer-right {
+        float: right;
+        margin-top: 6px;
+        max-width: 180px;
+    }
+
+        .footer-distributed .footer-right a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: #33383b;
+            border-radius: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+            margin-left: 3px;
+        }
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+
+@media (max-width: 600px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right {
+        text-align: center;
+    }
+
+    .footer-distributed .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    .footer-distributed .footer-left p.footer-links {
+        line-height: 1.8;
+    }
+
+    .noticia {
+        margin-top: -30px;
+        margin-left: 72%;
+        color: white;
+        display: block;
+    }
+}
+
+@media (max-width:490px ){
+    .LetrasSuperiores{
+        margin-left:10%;
+    }
+
+}
+@media (max-width:338px ) {
+    .LetrasSuperiores {
+        margin-left: 5%;
+    }
+}

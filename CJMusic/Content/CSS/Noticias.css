@@ -6,9 +6,7 @@
     box-sizing:border-box;
 }
 body {
-    background: #0f2027; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #1D1D1D;
 }
 
 a{
@@ -17,7 +15,7 @@ a{
 
 .contenedor{
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 10px 50px;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -25,7 +23,7 @@ a{
 }
 
 .contenedor_tarjeta{
-    margin:20px;
+    margin:5px;
 
 }
 
@@ -58,8 +56,8 @@ a{
 
 
 figure {
-    width: 300px;
-    height: 350px;
+    width: 250px;
+    height: 300px;
     margin: 0;
     position: relative;
     transition: all ease .5s;
@@ -82,18 +80,18 @@ figure .frontal{
 .noticia{
     display:none;
 }
-    figure .trasera {
-        position: absolute;
-        top: 0;
-        padding: 20px;
-        color: white;
-        transform: perspective(600px) rotateY(180deg);
-        backface-visibility: hidden;
-        overflow: auto;
-        background: #373B44; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #4286f4, #373B44); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(45deg, #4286f4, transparent); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
+figure .trasera {
+    position: absolute;
+    top: 0;
+    padding: 20px;
+    color: white;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    overflow: auto;
+    background: #0F2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 
         figure .trasera .titulo {

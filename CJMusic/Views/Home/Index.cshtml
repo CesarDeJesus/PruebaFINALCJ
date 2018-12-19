@@ -49,48 +49,71 @@ font-family: 'Kodchasan', sans-serif;
 font-family: 'Pacifico', cursive;
  color: white; font-size:55px; margin-left:25%; margin-top:50px;">Lista de Eventos Proximos...</p>
 <!--#26292A-->
-<div class="table-responsive" style="padding-left:80px; height:500px;  margin-left:-40px;  margin-top:50px;">
-    <table>
-        <thead style="background:black; color: antiquewhite; font-family: 'Poppins', sans-serif;">
-            <tr>
-                <th style="padding-left:100px;">Fecha</th>
-                <th style="padding-left:100px;">Artista</th>
-                <th style="padding-left:100px;">Lugar</th>
-                <th style="padding-left:100px;">Dirección</th>
-                <th style="padding-left:100px;">Boletos</th>
-                <th style="padding-left:100px; padding-right:100px;">Acciones</th>
-            </tr>
-        </thead>
 
 
-        @foreach (var p in ListaEventos)
-        {
-            <tbody class="tipoletra" style="font-family: 'Nanum Gothic', sans-serif;
-font-family: 'Kodchasan', sans-serif; color:white;">
-                <tr style="background:linear-gradient(0deg, #3a414c, transparent); width:100%; ">
-                    <td><p style="font-size:29px; margin-left:100px; width:100px;">@p.Fecha</p></td>
-                    <td><p style="margin-left:100px; width:100px;">@p.Artista </p></td>
-                    <td><p style="margin-left:100px; width:100px;">@p.Lugar</p></td>
-                    <td><p style="margin-left:100px; width:100px;">@p.Direccion</p></td>
-                    <td><a style="margin-left:100px; width:100px; color:white;" href="https://www.ticketmaster.com.mx/" class="card-link">Tickets</a></td>
-                    <td >
-                        <a style="margin-left:100px; width:100px; color:white;">@Html.ActionLink("Actualizar", "Actualizar", new { Id = p.Id })</a>
+<section>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                @foreach (var p in ListaEventos)
+                {
+                    <div class="col-lg-4">
+                        <div class="card text-center">
+                            <div class="title">
+                                <i class="fas fa-paper-plane"></i>
+                                <h2 style="font-family: 'Josefin Sans', sans-serif;">@p.Fecha</h2>
+                            </div>
+                            <div class="price">
+                                <h3 style="  font-family: 'Montserrat', sans-serif;">@p.Artista</h3>
+                            </div>
+                            <div class="option">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-landmark"><label style="font-family: 'Pacifico', cursive;">@p.Lugar</label> </i>
 
-                        <a>@Html.ActionLink("Eliminar", "Eliminar", new { Id = p.Id })</a>
-                    </td>
-                </tr>
-            </tbody>
-        }
-    </table>
-</div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-map-marked-alt"><label style="font-family: 'Montserrat', sans-serif;">@p.Direccion</label> </i>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <a href="https://www.ticketmaster.com.mx/">Tickets</a>
+                            @{
+                                if (User.IsInRole("Administrador"))
+                                {
+                                    @Html.ActionLink("Actualizar", "Actualizar", new { Id = p.Id })
+                                    @Html.ActionLink("Eliminar", "Eliminar", new { Id = p.Id })
+                                }
+                            }
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
 
 <br />
 <br />
 
-<a href="@Url.Action("Agregar")" style="font-family: 'Nanum Gothic', sans-serif;
-font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: white; margin-left:15%;"><i class="fas fa-calendar" style="font-size:25px; color: white; margin-right:5px;"></i>Agregar Nuevo Evento</a>
+@{
+    if (User.IsInRole("Administrador"))
+    {
+        <a href="@Url.Action("Agregar")" style="font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'Kodchasan', sans-serif; color:white; text-decoration:none; color: white; margin-left:15%;"><i class="fas fa-calendar" style="font-size:25px; color: white; margin-right:5px;"></i>Agregar Nuevo Evento</a>
+    }
+    else
+    {
+
+    }
+}
 
 
+<br />
+<br />
 
 
 <footer class="footer-distributed">

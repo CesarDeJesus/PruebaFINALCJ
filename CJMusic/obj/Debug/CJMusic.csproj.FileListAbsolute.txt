@@ -1,3 +1,7 @@
+C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.Migrations.CjMusiOf.resources
+C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.csproj.GenerateResource.cache
+C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.csproj.CoreCompileInputs.cache
+C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.csprojAssemblyReference.cache
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\ApplicationInsights.config
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\CJMusic.dll.config
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\CJMusic.dll
@@ -148,6 +152,7 @@ C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\System.Xml.XmlSerializer.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\System.Xml.XPath.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\System.Xml.XPath.XDocument.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Antlr3.Runtime.dll
+C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\DotNetZip.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\EntityFramework.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\EntityFramework.SqlServer.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.AI.Agent.Intercept.dll
@@ -190,6 +195,8 @@ C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\WebGrease.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Xamarin.Forms.Core.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Xamarin.Forms.Platform.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Xamarin.Forms.Xaml.dll
+C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\DotNetZip.pdb
+C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\DotNetZip.xml
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.AI.PerfCounterCollector.xml
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.AI.ServerTelemetryChannel.xml
@@ -230,8 +237,6 @@ C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.csproj.CoreCompileInputs.cache
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.csproj.CopyComplete
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.dll
 C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.pdb
-C:\Users\Cesar\Desktop\CJMusic\CJMusic\obj\Debug\CJMusic.csprojAssemblyReference.cache

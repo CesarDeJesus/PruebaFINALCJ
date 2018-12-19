@@ -1,7 +1,401 @@
 ﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+    /**/
 
-<p>Use this area to provide additional information.</p>
+    ViewBag.Title = "About";
+
+}
+@Styles.Render("~/Content/CSS/servicios.css")
+
+<p style="padding-top:27px; height:62px;  width:100%;"></p>
+
+
+@{
+    //if (User.Identity.IsAuthenticated.Equals(""))
+
+
+    //  if (User.IsInRole("Administrador"))
+
+}
+<p class="LetrasSuperiores">Compra el CD de tu Preferencia</p>
+
+
+
+<div class="contenedor">
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/cdCantu.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">Paty Cantu ❤ </h4>
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <button class="bComprar" asp-action="AgregarVentas" data-toggle="modal" data-target="#PatyCompra">Comprar $155</button>
+                    }
+                    else
+                    {
+                        <button class="bComprar" data-toggle="modal" data-target="#Paty">Comprar $155</button>
+                    }
+                }
+
+                <hr />
+                <p class="letra">
+                    01.-Suerte
+                </p>
+                <p class="letra">
+                    02.- Valiente
+                </p>
+                <p class="letra">
+                    03.- Manual
+                </p>
+                <p class="letra">
+                    04.- Dejame Ir
+                </p>
+                <p class="letra">
+                    05.- Ojala
+                </p>
+                <p class="letra">
+                    06.- No Fue Suficiente
+                </p>
+                <p class="letra">
+                    07.- Corazon Bipolar
+                </p>
+                <p class="letra">
+                    08.- Me quedo Sola
+                </p>
+                <p class="letra">
+                    09.- Clavo Que Saca Otro Clavo
+                </p>
+                <p class="letra">
+                    10.-Quiero Tenerte
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- Paty Cantu -->
+    <div class="modal fade" id="PatyCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Precio: 155$</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:red;">
+                        Cancelar Compra
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Registre su compra con los siguientes datos
+
+                    <form method="post">
+                        <input type="text" name="NombreCliente" placeholder="Nombre del Cliente" class="form-control" />
+                        <br />
+                        <input type="text" name="ApellidosCliente" placeholder="Apellidos" class="form-control" />
+                        <br />
+                        <input type="text" name="NoTarjeta" placeholder="No de Tarjeta" class="form-control" />
+                        <br />
+                        <input type="text" name="CodigoCVV" placeholder="Codigo CVV" class="form-control" />
+                        <br />
+                        <input type="text" name="Comentario" placeholder="COMENTARIO" class="form-control" />
+                        <br />
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+
+                    <a onclick="myFunction()">@Html.ActionLink("Comprar", "PatyCanciones", "Home",  new {  @class = "btn btn-primary" })</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Paty" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">¡¡Aviso Importante!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:red;">
+                        Cancelar
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Inicia Sesion o Registrate Antes de Adquirir
+                </div>
+                <div class="modal-footer">
+
+                    <a>@Html.ActionLink("Iniciar Sesion", "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-primary" })</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/mon.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">Mon Laferte ❤ </h4>
+                <button class="bComprar">Comprar $165</button>
+                <hr />
+                <p class="letra">
+                    01.-Tu Falta De Querer
+                </p>
+                <p class="letra">
+                    02.- Mi Buen Amor
+                </p>
+                <p class="letra">
+                    03.- Mi Flaco
+                </p>
+                <p class="letra">
+                    04.- El Beso
+                </p>
+                <p class="letra">
+                    05.- Que Sí
+                </p>
+                <p class="letra">
+                    06.- Amarrame Ft Juanes
+                </p>
+                <p class="letra">
+                    07.- Pa Donde se Fue
+                </p>
+                <p class="letra">
+                    08.- Amor Completo
+                </p>
+                <p class="letra">
+                    09.- Antes De Ti
+                </p>
+                <p class="letra">
+                    10.-Tormento
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/marioB.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">Mario Bautista ❤ </h4>
+                <button class="bComprar">Comprar $55</button>
+                <hr />
+                <p class="letra">
+                    01.- Baby Girl
+                </p>
+                <p class="letra">
+                    02.- Regalame
+                </p>
+                <p class="letra">
+                    03.- No Digas Nada
+                </p>
+                <p class="letra">
+                    04.- Mal de Amores
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/jd.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">JD Pantoja ❤ </h4>
+                <button class="bComprar">Comprar $55</button>
+                <hr />
+                <p class="letra">
+                    01.- Me fascina
+                </p>
+                <p class="letra">
+                    02.- Dile Mentiras
+                </p>
+                <p class="letra">
+                    03.- No Ha Podido
+                </p>
+                <p class="letra">
+                    04.- Roast Yourself
+                </p>
+                <p class="letra">
+                    05.- Tu Novio Reclama
+                </p>
+                <p class="letra">
+                    06.- Se Motiva
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/ms.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">Banda MS ❤ </h4>
+                <button class="bComprar">Comprar $150</button>
+                <hr />
+                <p class="letra">
+                    01.- Amor Expres
+                </p>
+                <p class="letra">
+                    02.- Tu Postura
+                </p>
+                <p class="letra">
+                    03.- Si Me Hubieras Oido
+                </p>
+                <p class="letra">
+                    04.- Por Este Amor
+                </p>
+                <p class="letra">
+                    05.- A Lo Mejor
+                </p>
+                <p class="letra">
+                    06.- El Color de Tus Ojos
+                </p>
+                <p class="letra">
+                    07.- No Me Pidas Perdon
+                </p>
+                <p class="letra">
+                    08.- Piénsalo
+                </p>
+                <p class="letra">
+                    09.- Tengo Que Colgar
+                </p>
+                <p class="letra">
+                    10.- De Haber Sabido
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/nodal.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">Christian Nodal ❤ </h4>
+                <button class="bComprar">Comprar $55</button>
+                <hr />
+                <p class="letra">
+                    01.- Te Falle
+                </p>
+                <p class="letra">
+                    02.- Adios Amor
+                </p>
+                <p class="letra">
+                    03.- Eres
+                </p>
+                <p class="letra">
+                    04.- No Te Contaron Mal
+                </p>
+                <p class="letra">
+                    05.- Te Voy A Olvidar
+                </p>
+                <p class="letra">
+                    06.- Probablemente
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/alfredo.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">Alfredo Olivas ❤ </h4>
+                <button class="bComprar">Comprar $165</button>
+                <hr />
+                <p class="letra">
+                    01.- Antecedentes De Culpa
+                </p>
+                <p class="letra">
+                    02.- El Malo De Culiacan
+                </p>
+                <p class="letra">
+                    03.- El Inicio Del Final
+                </p>
+                <p class="letra">
+                    04.- Ya No Es Normal
+                </p>
+                <p class="letra">
+                    05.- En Definitiva
+                </p>
+                <p class="letra">
+                    06.- El Paciente
+                </p>
+                <p class="letra">
+                    07.- El Problema
+                </p>
+                <p class="letra">
+                    08.- Tus Lagrimas
+                </p>
+                <p class="letra">
+                    09.- Seguramente
+                </p>
+                <p class="letra">
+                    10.- Y Por Que No?
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="contenedor_tarjeta">
+        <figure>
+            <img class="frontal" src="~/Content/Img/CDs/arrolladora.jpg" alt="artista" />
+            <!-- <p class="noticia"><i class="fas fa-newspaper">Noticia..</i></p>-->
+            <figcaption class="trasera">
+                <h4 class="titulo">La Arrolladora ❤ </h4>
+                <button class="bComprar">Comprar $155</button>
+                <hr />
+                <p class="letra">
+                    01.- El Final de Nuestra Historia
+                </p>
+                <p class="letra">
+                    02.- Ya es Muy Tarde
+                </p>
+                <p class="letra">
+                    03.- Ya No Te Buscare
+                </p>
+                <p class="letra">
+                    04.- Entre Beso y Beso
+                </p>
+                <p class="letra">
+                    05.- Cosas Que Nunca Te Dije
+                </p>
+                <p class="letra">
+                    06.- Niña De Mi Corazón
+                </p>
+                <p class="letra">
+                    07.- Disponible Para Ti
+                </p>
+                <p class="letra">
+                    08.- Todo Depende de Ti
+                </p>
+                <p class="letra">
+                    09.- Si Tu Amor No Vuelve
+                </p>
+                <p class="letra">
+                    10.- Perdon Por Que?
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+
+<footer class="footer-distributed">
+    <div class="footer-right">
+        <a href="#" style="border-radius:35%;"><i class="fab fa-facebook-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-twitter-square"></i></a>
+        <a href="#" style="border-radius:35%;"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+    </div>
+    <div class="footer-left">
+        <img src="~/Content/Img/logooficial.gif" style="height:55px; width:55px;" />
+        <p style="color:white;">
+            © Copyright 2018 CJ Music Group. All rights reserved.
+        </p>
+    </div>
+</footer>
+@Scripts.Render("~/Scripts/js/pruebaagrega.js")
